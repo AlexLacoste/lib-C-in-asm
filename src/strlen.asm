@@ -1,5 +1,5 @@
 section .text
-    global strlen
+    global strlen ; global strlen to link strlen with ld and use like shared lib
 strlen:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
     jmp _loop   ; go in loop
