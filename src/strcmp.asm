@@ -19,14 +19,4 @@ _loop:
 _return:
 	sub r14d, r15d	; r14d = r14d - r15d, rd14 is 32 bits version of r14b
     mov eax, r14d   ; copy substract eax (eax because -> 32 bites size of int)
-    cmp eax, 0  ; check is eax == 0
-    jl _return_neg  ; if less than 0 to _return_neg
-    je _return_eq   ; if eax == 0 to _return_eq
-    mov eax, 1  ; if here eax is pos so eax take 1 value
-    ret
-
-_return_neg:
-    mov eax, -1
-    ret
-_return_eq:
     ret
