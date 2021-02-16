@@ -12,7 +12,8 @@ FILES	=	memcpy.asm		\
 			memset.asm		\
 			strcmp.asm		\
 			strchr.asm		\
-			strlen.asm
+			strlen.asm		\
+			strncmp.asm
 
 SRC		= 	$(addprefix src/, $(FILES))
 

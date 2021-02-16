@@ -1,11 +1,13 @@
 section .text
-    global strcmp
-strcmp:
+    global strncmp
+strncmp:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
     jmp _loop
 _incr:
     inc rcx ; increment counter and go in loop
 _loop:
+    cmp rcx, rdx
+    je _return
     mov r14b, BYTE [rdi + rcx]    ; copy in a tmp r14b, byte at pointer rdi + rcx
     mov r15b, BYTE [rsi + rcx]    ; copy in a tmp r15b, byte at pointer rsi + rcx
     cmp r14b, r15b  ;   compare
@@ -29,4 +31,5 @@ _return_neg:
     mov eax, -1
     ret
 _return_eq:
+    mov eax, 0  ; if here eax is eq so eax take 0 value
     ret
