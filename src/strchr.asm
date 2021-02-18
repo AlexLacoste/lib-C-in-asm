@@ -3,7 +3,6 @@ section .text
 strchr:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
     mov rax, 0  ; put 0 in rax to return NULL
-    je _return
     jmp _loop   ; go in loop
 _incr:
     inc rcx ; increment counter and go in loop
