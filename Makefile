@@ -10,8 +10,9 @@ NAME	=	libasm.so
 FILES	=	memcpy.asm		\
 			memmove.asm		\
 			memset.asm		\
-			strcmp.asm		\
+			strcasecmp.asm	\
 			strchr.asm		\
+			strcmp.asm		\
 			strlen.asm		\
 			strncmp.asm
 
