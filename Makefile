@@ -14,6 +14,7 @@ FILES	=	memcpy.asm		\
 			strcasecmp.asm	\
 			strchr.asm		\
 			strcmp.asm		\
+			strcspn.asm		\
 			strlen.asm		\
 			strncmp.asm		\
 			strpbrk.asm		\
