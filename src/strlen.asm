@@ -1,3 +1,5 @@
+BITS 64
+
 section .text
     global strlen ; global strlen to link strlen with ld and use like shared lib
 strlen:

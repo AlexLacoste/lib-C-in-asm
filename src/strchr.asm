@@ -1,3 +1,5 @@
+BITS 64
+
 section .text
     global strchr
 strchr:
@@ -15,7 +17,8 @@ _loop:
     jmp _return
 
 _return_pointer:
-    mov rax, [rdi + rcx]    ; put in rax pointer of the char in str
+    mov rax, rdi    ; put in rax pointer of rdi
+    add rax, rcx    ; add to the pointer rcx
     jmp _return
 _return:
     ret ; return rax
