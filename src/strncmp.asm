@@ -10,17 +10,17 @@ _incr:
 _loop:
     cmp rcx, rdx
     je _return
-    mov r14b, BYTE [rdi + rcx]    ; copy in a tmp r14b, byte at pointer rdi + rcx
-    mov r15b, BYTE [rsi + rcx]    ; copy in a tmp r15b, byte at pointer rsi + rcx
-    cmp r14b, r15b  ;   compare
+    mov r8b, BYTE [rdi + rcx]    ; copy in a tmp r8b, byte at pointer rdi + rcx
+    mov r9b, BYTE [rsi + rcx]    ; copy in a tmp r9b, byte at pointer rsi + rcx
+    cmp r8b, r9b  ;   compare
     jne _return ; if not equal -> _return
-    cmp r14b, 0  ; check if r14b == 0
+    cmp r8b, 0  ; check if r8b == 0
     je _return  ; if equal -> _return
-    cmp r15b, 0  ; check if r15b == 0
+    cmp r9b, 0  ; check if r9b == 0
     je _return  ; if equal -> _return
     jmp _incr
 
 _return:
-	sub r14d, r15d	; r14d = r14d - r15d, rd14 is 32 bits version of r14b
-    mov eax, r14d   ; copy substract eax (eax because -> 32 bites size of int)
+	sub r8d, r9d	; r8d = r8d - r9d, rd14 is 32 bits version of r8b
+    mov eax, r8d   ; copy substract eax (eax because -> 32 bites size of int)
     ret
