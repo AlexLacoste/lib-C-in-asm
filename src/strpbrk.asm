@@ -13,15 +13,15 @@ _incr:
     mov rbx, 0  ; reset rbx to 0
     inc rcx ; increment counter and go in loop
 _loop:
-    mov r8b, BYTE [rdi + rcx]    ; copy the byte at pointer pos rdi + rcx in r8b (rdi is the 1st parameter of strlen) (r8b is 1 byte)
-    cmp r8b, 0 ; check if we are at the end of str
+    mov r9b, BYTE [rdi + rcx]    ; copy the byte at pointer pos rdi + rcx in r9b (rdi is the 1st parameter of strlen) (r9b is 1 byte)
+    cmp r9b, 0 ; check if we are at the end of str
     je _return  ; if yes jump in _return to return NULL
 _second_loop:
-    mov r9b, BYTE [rsi + rbx]  ; copy the byte at pointer pos rsi + rbx in r9b (rsi is the 2nd parameter) (r9b is 1 byte)
-    cmp r8b, r9b  ; check if the charachter in r9b is equal to the charachter in r8b 
-    je _return_pointer  ; jump on _return pointer if r8b and sil are same char
-    cmp r9b, 0   ; check end of loop
-    je _incr   ; if r9b == 0 => go in _incr function
+    mov r10b, BYTE [rsi + rbx]  ; copy the byte at pointer pos rsi + rbx in r10b (rsi is the 2nd parameter) (r10b is 1 byte)
+    cmp r9b, r10b  ; check if the charachter in r10b is equal to the charachter in r9b 
+    je _return_pointer  ; jump on _return pointer if r9b and sil are same char
+    cmp r10b, 0   ; check end of loop
+    je _incr   ; if r10b == 0 => go in _incr function
     inc rbx
     jmp _second_loop
 
