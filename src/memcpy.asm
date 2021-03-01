@@ -4,6 +4,7 @@ section .text
     global memcpy
 memcpy:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
+    xor rax, rax
     jmp _loop
 _incr:
     inc rcx ; increment counter and go in loop

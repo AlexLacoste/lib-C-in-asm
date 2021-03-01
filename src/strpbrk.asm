@@ -6,6 +6,8 @@ strpbrk:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
     mov rbx, 0  ; set counter for second_loop at 0 (use rbx as counter)
     mov rax, 0  ; put 0 in rax to return NULL
+    xor r9, r9
+    xor r10, r10
     cmp BYTE [rsi], 0   ; check if there is one char in str checker
     je _return  ; if no char jump in _return
     jmp _loop   ; go in loop

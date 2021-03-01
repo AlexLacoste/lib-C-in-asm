@@ -4,6 +4,7 @@ section .text
     global memmove
 memmove:
     push rbp
+    xor r9, r9
     mov rbp, rsp
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
     cmp rdx, 0  ; check if 3rd arg is set to 0

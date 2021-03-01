@@ -6,6 +6,8 @@ strstr:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
     mov rbx, 0  ; set second counter to 0
     mov rax, 0  ; put 0 in rax to return NULL
+    xor r9, r9
+    xor r10, r10
     jmp _loop   ; go in loop
 _incr:
     inc rcx ; increment counter and go in loop

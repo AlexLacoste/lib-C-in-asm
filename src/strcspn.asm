@@ -6,6 +6,8 @@ strcspn:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
     mov rbx, 0  ; set counter for second_loop at 0 (use rbx as counter)
     mov rax, 0  ; put 0 in rax to return NULL
+    xor r9, r9
+    xor r10, r10
     jmp _loop   ; go in loop
 _incr:
     mov rbx, 0  ; reset rbx to 0

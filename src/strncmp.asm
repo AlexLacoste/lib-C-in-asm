@@ -4,6 +4,8 @@ section .text
     global strncmp
 strncmp:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
+    xor r9, r9
+    xor r10, r10
     jmp _loop
 _incr:
     inc rcx ; increment counter and go in loop

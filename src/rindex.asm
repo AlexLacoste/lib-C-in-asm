@@ -4,6 +4,7 @@ section .text
     global rindex
 rindex:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
+    xor rax, rax
     mov rbx, 0  ; put 0 in rbx to return NULL
     jmp _loop   ; go in loop
 _incr:

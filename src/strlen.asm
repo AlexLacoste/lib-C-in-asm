@@ -4,6 +4,7 @@ section .text
     global strlen ; global strlen to link strlen with ld and use like shared lib
 strlen:
     mov rcx, 0  ; set counter for loop at 0 (use rcx as counter it's a convention)
+    xor rax, rax
     jmp _loop   ; go in loop
 _incr:
     inc rcx ; increment counter and go in loop
